@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rus_Roxana_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="44*"/>
@@ -51,27 +51,27 @@
             </Canvas>
         </GroupBox>
 
-        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="183" Margin="10,10,0,0" Grid.ColumnSpan="3">
-            <MenuItem Header="File" RenderTransformOrigin="138,273" Height="21" Width="43">
-                <MenuItem Header="Exit"/>
-            </MenuItem>
-            <MenuItem Header="_Doughnuts" RenderTransformOrigin="1.262,0.342" Height="23" Width="131">
+        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="210" Margin="0,26,0,0" Grid.ColumnSpan="4" RenderTransformOrigin="0.498,0.535">
+            <MenuItem Header="File" Height="23" Width="92" RenderTransformOrigin="0.741,1.173">
                 <MenuItem.RenderTransform>
                     <TransformGroup>
-                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                        <ScaleTransform ScaleX="1"/>
                         <SkewTransform/>
                         <RotateTransform/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </MenuItem.RenderTransform>
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Doughnuts" Height="19" Width="79">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
-
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop"></MenuItem>
             </MenuItem>
         </Menu>
     </Grid>
